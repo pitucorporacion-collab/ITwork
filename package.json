@@ -1,34 +1,29 @@
 {
-  "name": "itwork",
-  "version": "1.0.0",
-  "description": "ITwork - Monitor de infraestructura de red",
+  "name": "monitor-red",
+  "version": "2.4.0",
+  "private": true,
+  "description": "Monitor local de dispositivos de red RVF Rio Grande",
   "main": "main.js",
-  "author": "ITwork",
-  "license": "MIT",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-builder --win portable"
+    "start": "node server.js",
+    "build:win": "electron-builder --win --x64 --publish never"
   },
   "devDependencies": {
-    "electron": "^38.0.0",
-    "electron-builder": "^26.0.0"
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
   },
   "build": {
-    "appId": "com.pitu.itwork",
-    "productName": "ITwork",
-    "asar": true,
-    "files": [
-      "index.html",
-      "styles.css",
-      "app.js",
-      "data.js",
-      "main.js",
-      "package.json"
-    ],
+    "appId": "com.pitu.monitorred",
+    "productName": "Monitor Red",
+    "files": ["main.js", "preload.js", "server.js", "index.html", "styles.css", "app.js", "data.js", "data.json", "package.json"],
     "win": {
       "target": [
-        "portable"
+        { "target": "portable", "arch": ["x64"] }
       ]
-    }
+    },
+    "portable": {
+      "artifactName": "Monitor-Red-${version}-Portable.exe"
+    },
+    "publish": null
   }
 }
