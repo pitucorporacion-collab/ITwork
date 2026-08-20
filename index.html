@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ITwork</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="brand">ITwork</div><div class="clockbox"><div id="clock">HORA ACTUAL: --:--:--</div><div id="lastPing">ÚLTIMO PING: --:--:--</div></div></header>
+<main>
+<section id="home" class="view">
+  <div class="summary"><div><b id="totalIPs">0</b><span> IPs</span></div><div class="ok"><b id="onlineIPs">0</b><span> ONLINE</span></div><div class="bad"><b id="offlineIPs">0</b><span> OFFLINE</span></div></div>
+  <div class="actions"><button id="problemsBtn">⚠ Problemas</button><button id="racksBtn">▦ Racks</button><button id="rfidBtn">RFID</button></div>
+  <h2>Monitoreo</h2><div id="groups" class="groups"></div>
+</section>
+<section id="devicesView" class="view hidden"><button class="back" id="backDevices">← Volver</button><h2 id="devicesTitle">Dispositivos</h2><div class="tablewrap"><table id="devicesTable"><thead><tr><th data-sort="ip">IP ↕</th><th data-sort="hostname">HOSTNAME ↕</th><th>UBICACIÓN</th><th>CONEXIÓN</th><th>ESTADO</th></tr></thead><tbody id="devicesBody"></tbody></table></div></section>
+<section id="racksView" class="view hidden"><button class="back" id="backRacks">← Volver</button><div id="rackPicker"><h2>Racks</h2><div id="rackButtons" class="rackButtons"></div></div><div id="rackContent" class="hidden"><div class="rackHeader"><div><h2 id="rackTitle">RACK</h2><button id="photoBtn" class="photoBtn">📷 Ver foto</button></div><div class="fakePhoto">RACK</div></div><div class="tabletools"><input id="rackFilter" placeholder="Filtrar..."> <button id="addRackRow">+ Fila</button></div><div class="tablewrap"><table id="rackTable"><thead><tr><th>RACK</th><th>SECTOR</th><th>PATCH</th><th>SW</th><th>BOCA</th><th>MARCA</th><th>DESCRIPCIÓN</th><th>HOSTNAME</th><th>IP</th></tr></thead><tbody id="rackBody"></tbody></table></div></div></section>
+</main>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
