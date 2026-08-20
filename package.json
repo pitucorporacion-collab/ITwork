@@ -1,0 +1,34 @@
+{
+  "name": "itwork",
+  "version": "1.0.0",
+  "description": "ITwork - Monitor de infraestructura de red",
+  "main": "main.js",
+  "author": "ITwork",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.pitu.itwork",
+    "productName": "ITwork",
+    "asar": true,
+    "files": [
+      "index.html",
+      "styles.css",
+      "app.js",
+      "data.js",
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ]
+    }
+  }
+}
